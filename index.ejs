@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <h3> Farms that are in Savanna Climate:</h3>
+  <h3> Count: </h3>
+  <% farms.forEach(function(farm){ %>
+    <div>
+      <div>
+        <label>Farm ID: <output><%= farm.farm_id %></output> </label>
+      </div>
+      <div>
+        <label>SoilType: <output><%= farm.region_id.soilType %></output> </label>
+      </div>
+      <div>
+        <label>Inches of Rain: <output><%= farm.factors.coverage.inchesOfRain %></output> </label>
+        <label>Location: <output><%= farm.factors.coverage.location %></output> </label>
+      </div>
+      <div>
+        <label>Water Saturation of Soil: <output><%= farm.factors.waterSaturation %></output> </label>
+        <label>Atmosphere Humidity: <output><%= farm.factors.humidity %></output> </label>
+      </div>
+      <div>
+        <label>Crop: <output><%= farm.crop.Name %></output> </label>
+        <label>Disease: <output><%= farm.crop.health.diseases %></output> </label>
+      </div>
+      <div>
+        <label>Yield: <output><%= farm.crop.yield %></output> </label>
+      </div>
+    </div>
+    <hr>
+  <% }); %>
+
+  <footer>
+    <div>Made by Lily Lane</div>
+  </footer>
+</body>
+
+</html>
