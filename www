@@ -4,11 +4,10 @@
  * Module dependencies.
  */
 
-import { app } from '../app.js';
 import { createServer } from 'http';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-
+import { app } from '../app.js'
 /**
  * Get port from environment and store in Express.
  */

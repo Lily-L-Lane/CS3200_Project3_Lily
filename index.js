@@ -5,7 +5,7 @@ const { getFarms } = require("./farms.js");
 /* GET home page. */
 router.get('/', async function(req, res) {
         // Get farms data
-        const farms = await getfarms();
+        const farms = await getFarms();
 
         // Log farms count
         console.log("route / called - farms", farms.length);

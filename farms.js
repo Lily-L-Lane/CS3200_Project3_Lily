@@ -47,7 +47,7 @@ async function saveFarmsToCache(climateType, farms) {
       await client.rPush(key, farmKey);
     }
     await client.set(key + ":cached", 1, { EX: EXPIRATION_TIME }); // 60 seconds cache
-    console.log("🧸 farms saved to cache total", farms.length);
+    console.log("🌱 farms saved to cache total", farms.length);
   } finally {
     await client.disconnect();
   }
@@ -70,19 +70,19 @@ async function getFarmsFromMongo(climateType) {
 // Returns the list of farms for a climateType, checking first in the cache
 async function getFarms(climateType) {
   let farms = [];
-  console.log("Checking if the resource is in the cache", climateType);
+  console.log("Checking if the farm is in the cache", climateType);
   farms = await getFarmsFromCache(climateType);
   if (!farms) {
     console.log(
-      "🚫 Resource not found in the cache, checking mongo",
+      "🚫 farm not found in the cache, checking mongo",
       climateType
     );
     farms = await getFarmsFromMongo(climateType);
-    console.log("Resource found in mongo", climateType, farms.length);
+    console.log("farm found in mongo", climateType, farms.length);
 
     await saveFarmsToCache(climateType, farms);
   } else {
-    console.log("👍 Resource found in the cache", climateType, farms.length);
+    console.log("🚜 farm found in the cache", climateType, farms.length);
   }
   return farms;
 }
@@ -108,12 +108,12 @@ let userClimate = "Savanna Climate";
   before = performance.now();
   // Get the farms for the first time (not in cache)
   await getFarms(userClimate);
-  console.log("🚀 farms fetched from mongo in", performance.now() - before);
+  console.log("🐴 farms fetched from mongo in", performance.now() - before);
 
   before = performance.now();
   // Get the farms for the second time, it should be in the cache
   await getFarms(userClimate);
-  console.log("⚽️ farms fetched from cache in", performance.now() - before);
+  console.log("🐎 farms fetched from cache in", performance.now() - before);
 })();
 
 // module.exports = { getFarms };
