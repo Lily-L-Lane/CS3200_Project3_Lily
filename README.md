@@ -14,7 +14,7 @@ This repository contains the implementation of a NodeExpress application for CS3
 ### bin
 - **www**: Implementation on local port
 - **CS3200_P3_JSON.json**: JSON database from MongoDB
-- **farms.js**: Implementation of caching, Redis, and MongoDB. Retrieves farms from MongoDB and stores them in the cache. Also runs the query that returns farms from specified climates.
+- **farms.js**: Implementation of caching, Redis, and MongoDB. Retrieves farms from MongoDB and stores them in the cache. Also runs the query that returns farms from specified climates. Essentially, the node implementation will be found here.
 
 ### routes
 - **index.js**: Retrieves data from `farms.js` and exports it to `app.js`
