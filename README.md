@@ -4,8 +4,10 @@ This repository contains the implementation of a NodeExpress application for CS3
 
 ## Contents
 
-- **UML**: UML Diagram
-- **Document**: Answers to questions 1-3 for assignment Project3
+- **Business Requirements Document**: Business Requirements Document
+- **UML**: UML Diagram pdf for clarity
+- **Redis UML model functionalilty**: Answers to questions 1-3 for assignment Project3
+- **CS3200 Project 3 Results**: output shown on terminal and redis insight
 
 ## Application Structure
 
