@@ -1,6 +1,7 @@
 # CS3200_Project3 - NodeExpress Implementation
 
 This repository contains the implementation of a NodeExpress application for CS3200_Project3.
+As of April 19, the node implementation works.
 
 ## Contents
 
